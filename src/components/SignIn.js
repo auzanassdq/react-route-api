@@ -12,8 +12,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
-
+import auth from "../utils/auth";
+import {Link as Links} from "react-router-dom";
 
 function Copyright() {
   return (
@@ -126,7 +126,13 @@ export default function SignIn(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            
+            onClick={
+            () => {
+              auth.login(()=>{
+                props.history.push("/album")
+              })
+            }
+          }
           >
             Sign In
           </Button>
@@ -137,9 +143,9 @@ export default function SignIn(props) {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Links to="/signup">
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </Links>
             </Grid>
           </Grid>
         </form>

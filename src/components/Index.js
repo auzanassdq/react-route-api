@@ -31,7 +31,7 @@ export default class List extends Component {
         <Grid item xs={12}>
           <Grid container justify="center">
             {this.state.listData.map(d => (
-              <MediaCard firstName={d.firstName} age={d.age} email={d.email} />
+              <MediaCard url={d.imgUrl} firstName={d.firstName} age={d.age} email={d.email} />
             ))}
           </Grid>
         </Grid>
