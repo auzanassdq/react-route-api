@@ -66,17 +66,19 @@ export default function SignIn(props) {
   }
 
   function handleSubmit(event) {
-    localStorage.setItem("data",JSON.stringify(submitValue))
+    // localStorage.setItem("data",JSON.stringify(submitValue))
+    const userLocal = JSON.parse(localStorage.getItem("data"))
+
     event.preventDefault();
     if(submitValue.email === '' || submitValue.password === '') {
       alert('Dont Forget To Fill Your name Or Passwords')
-    }else{
+    }else if (submitValue.email === userLocal.email && submitValue.password === userLocal.password){
       props.history.push('/album')
+    }else{
+      alert('inputan salah')
     }
     console.log(submitValue);
   }
-
-  
 
   return (
     <Container component="main" maxWidth="xs" >

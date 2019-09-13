@@ -7,7 +7,7 @@ import Album from "./components/Album";
 
 // fakeAuth OBJ
 const fakeAuth = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   authencate(cb) {
     this.isAuthenticated = true
     setTimeout(cb, 100)
@@ -60,7 +60,7 @@ function App() {
 
       <Route path="/sign-in" component={SignIn} />
       <Route path="/sign-up" component={SignUp} />
-      <PrivateRoute path='/album' component={Album}/>
+      <Route path='/album' component={Album}/>
 
     </Router>
   );
