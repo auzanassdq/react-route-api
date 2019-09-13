@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 200
   }
 }));
 
@@ -27,7 +27,7 @@ export default function MediaCard(props) {
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              image={require('./assets/card.png')}
               title="Contemplative Reptile"
             />
             <CardContent>
