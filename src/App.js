@@ -6,7 +6,7 @@ import SignUp from "./components/SignUp";
 import Album from "./components/Album";
 
 const fakeAuth = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   authencate(cb) {
     this.isAuthenticated = true
     setTimeout(cb, 100)
