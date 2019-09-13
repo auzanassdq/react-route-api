@@ -1,0 +1,77 @@
+{
+    "members" : [
+        {
+            "id": 1,
+            "firstName": "janto",
+            "lastName": "motulo",
+            "email": "motulojanto@gmail.com",
+            "age": 19,
+            "companyID": 1
+        },
+        {
+            "id": 2,
+            "firstName": "nico",
+            "lastName": "husin",
+            "email": "nicohusin@gmail.com",
+            "age": 22,
+            "companyID": 2
+        },
+        {
+            "id": 3,
+            "firstName": "auzan",
+            "lastName": "assidqi",
+            "email": "auzanassidqi@gmail.com",
+            "age": 25,
+            "companyID": 3
+        },
+        {
+            "id": 3,
+            "firstName": "mevin",
+            "lastName": "muhammad",
+            "email": "mmevinalifviyanuar@gmail.com",
+            "age": 30,
+            "companyID": 4
+        },
+        {
+            "id": 5,
+            "firstName": "auzan",
+            "lastName": "assidqi",
+            "email": "auzanassidqi@gmail.com",
+            "age": 25,
+            "companyID": 3
+        },
+        {
+            "id": 6,
+            "firstName": "mevin",
+            "lastName": "muhammad",
+            "email": "mmevinalifviyanuar@gmail.com",
+            "age": 30,
+            "companyID": 4
+        }
+
+        
+    ],
+    "companies": [
+        {
+            "id": 1,
+            "name": "gojek",
+            "description": "PT Aplikasi Karya Anak Bangsa, doing business as Gojek (stylized in lower case as gojek), is Southeast Asia's leading on-demand multi-service platform and digital payment technology group."
+        },
+        {
+            "id": 2,
+            "name": "tokopedia",
+            "description": "Tokopedia is an Indonesian technology company[3], sometimes referred to as a unicorn. It was founded in 2009 by William Tanuwijaya and his best friend, Leontinus Alpha Edison. As of November 2018, the company is valued at about $7 billion."
+        },
+        {
+            "id": 3,
+            "name": "bukalapak",
+            "description": "Bukalapak is one of the largest e-commerce companies based in Indonesia valued at over US$1 billion.[3][4][5] Founded by Achmad Zaky, Nugroho Herucahyono and Fajrin Rasyid in 2010, Bukalapak initially started as an online marketplace to enable small medium enterprise go online"
+        },
+        {
+            "id": 4,
+            "name": "traveloka",
+            "description": "Traveloka (est. in 2012) is an Indonesian unicorn company that provides airline ticketing and hotel booking services online expanding rapidly into South East Asia[2] and Australia[3]. It recently expanded to provide lifestyle products and services, such as attraction tickets, activities, car rental, and restaurant vouchers."
+        }
+    ]
+        
+}
