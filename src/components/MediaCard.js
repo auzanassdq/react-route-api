@@ -31,10 +31,10 @@ export default function MediaCard(props) {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {props.name}
+                {props.dataTitle}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {props.email}
+                {props.dataBody}
               </Typography>
             </CardContent>
           </CardActionArea>
