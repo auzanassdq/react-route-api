@@ -11,10 +11,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import {
-  BrowserRouter as Router,
-  Route, Link
-} from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -163,7 +160,7 @@ export default function SignUp(props) {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/sign-in" variant="body2">d
+              <Link to="/sign-in" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
