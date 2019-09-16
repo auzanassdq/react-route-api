@@ -74,7 +74,8 @@ export default function SignIn(props) {
       submitValue.email === userLocal.email &&
       submitValue.password === userLocal.password
     ) {
-      setSubmitValue({ ...submitValue, isSignIn: true });
+      // setSubmitValue({ ...submitValue, isSignIn: true });
+      submitValue.isSignIn = true
       props.history.push("/album");
       localStorage.setItem("userSignIn", JSON.stringify(submitValue));
     } else {
