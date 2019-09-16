@@ -12,7 +12,7 @@ import { yellow, red } from "@material-ui/core/colors";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Button } from "@material-ui/core";
+import Details from '@material-ui/icons/Details';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -22,14 +22,14 @@ const useStyles = makeStyles(theme => ({
     paddingTop: "56.25%" // 16:9
   },
   expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
   },
   expandOpen: {
-    transform: "rotate(180deg)"
+    transform: 'rotate(180deg)',
   },
   avatar: {
     backgroundColor: yellow[500]
@@ -78,6 +78,9 @@ export default function MediaCard(props) {
         <IconButton aria-label="update button">
           <EditIcon />
         </IconButton>
+        <IconButton aria-label="details">
+          <Details/>
+        </IconButton>
         <IconButton
           // className={clsx(classes.expand, {
           //   [classes.expandOpen]: expanded
@@ -88,9 +91,7 @@ export default function MediaCard(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
-        <Button onClick={()=>{
-          props.details()
-        }} variant="contained" className={classes.btn}>DETAILS</Button>
+        
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
