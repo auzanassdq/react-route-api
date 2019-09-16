@@ -9,7 +9,17 @@ import SignUp from "./components/SignUp";
 import Album from "./components/Album";
 import Home from "./components/Home";
 
+function setUserLocal(){
+  let submitValue = {
+    email: "",
+    password: "",
+    isSignIn: false
+  }
+  localStorage.setItem("userSignIn", JSON.stringify(submitValue));
+}
+
 function App() {
+  setUserLocal()
   return (
     <Router>
       <Route exact path="/" component={Home} />

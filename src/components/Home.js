@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 // import Link from '@material-ui/core/Link';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -57,8 +57,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Home() {
   const classes = useStyles();
-
-  let userLocal = JSON.parse(localStorage.getItem("userSignIn"));
+  let userLocal = JSON.parse(localStorage.getItem("userSignIn"))
 
   return (
     <React.Fragment>

@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 export default function SignIn(props) {
   const classes = useStyles();
 
-  const [submitValue, setSubmitValue] = useState({
+  let [submitValue, setSubmitValue] = useState({
     email: "",
     password: "",
     isSignIn: false
