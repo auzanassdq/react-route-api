@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import auth from "../utils/auth"
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -66,11 +66,11 @@ export default function SignUp(props) {
   }
 
   function handleSubmit(event) {
-    localStorage.setItem("data", JSON.stringify(submitValue));
     event.preventDefault();
     if (submitValue.email === "" || submitValue.password === "") {
       alert("Dont Forget To Fill Your name Or Passwords");
     } else {
+      localStorage.setItem("data", JSON.stringify(submitValue));
       props.history.push("/sign-in");
     }
     console.log(submitValue);
@@ -155,6 +155,7 @@ export default function SignUp(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
+
           >
             Sign Up
           </Button>
