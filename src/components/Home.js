@@ -87,15 +87,13 @@ export default function Home() {
                 <div>
                   <Grid container spacing={2} justify="center">
                     <Grid item>
-                      <Link to="/sign-in">
-                        <Button variant="outlined" color="primary">
-                          Sign In
-                        </Button>
-                      </Link>
+                      <Button variant="contained" >
+                        <Link className="links" to="/sign-in">Login</Link>
+                      </Button>
                     </Grid>
                     <Grid item>
-                      <Button variant="outlined" color="primary">
-                        <Link to="/sign-up">Sign Up</Link>
+                      <Button variant="contained" color="secondary">
+                        <Link className="links" to="/sign-up">Sign Up</Link>
                       </Button>
                     </Grid>
                   </Grid>
@@ -103,7 +101,7 @@ export default function Home() {
               )}
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Link to={userLocal.isSignIn ? "/album" : "/sign-in"}>
+                  <Link className="links" to={userLocal.isSignIn ? "/album" : "/sign-in"}>
                     <Button variant="contained" color="primary">
                       View Our Album
                     </Button>

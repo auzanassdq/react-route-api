@@ -42,7 +42,7 @@ function Copyright() {
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}
         <Link color="inherit" href="https://material-ui.com/">
-          Your Website
+          www.anjm.com
         </Link>{" "}
         {new Date().getFullYear()}
         {"."}
@@ -57,7 +57,7 @@ export default function Footer() {
         <div>
             <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Auzan || Janto || Nico || Mevin
         </Typography>
         <Typography
           variant="subtitle1"
@@ -65,7 +65,7 @@ export default function Footer() {
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          We build website for fun
         </Typography>
         <Copyright />
       </footer>

@@ -18,8 +18,12 @@ const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2)
   },
+  heading : {
+    textTransform: "uppercase"
+  },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    textDecoration: "none"
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -105,8 +109,9 @@ export default function Album() {
               align="center"
               color="textPrimary"
               gutterBottom
+              className= {classes.heading}
             >
-              Selamat Datang di Album
+              Contact List
             </Typography>
           </Container>
         </div>
