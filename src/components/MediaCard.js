@@ -19,9 +19,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  let fetchData = () => {
-    console.log(props);
-  };
+  console.log(props);
+  
   return (
         <Card className={classes.card}>
           <CardActionArea>
@@ -32,19 +31,16 @@ export default function MediaCard(props) {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {props.firstName}
+                {props.name}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {`${props.firstName}, berumur ${props.age}, dan saat ini ia bekerja di salah satu perusahaan indonesia yang terkenal. Email ${props.email}`}
+                {props.email}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button onClick={fetchData} size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
+            <Button onClick={() => props.delete(props.id)} size="small" color="primary">
+              Delete
             </Button>
           </CardActions>
         </Card>
