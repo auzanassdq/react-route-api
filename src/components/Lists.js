@@ -27,23 +27,9 @@ export default class Lists extends Component {
       .then(json => console.log(json));
   };
 
-  postData = async () => {
-    await fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: JSON.stringify({
-        userId: 1,
-        title: "title goes here",
-        body: "Body message"
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-      .then(response => response.json())
-      .then(json => console.log(json));
-  };
-
-
+  handleDetails = (id) => {
+    alert("NOT IMPLEMENTED YET SORRY")
+  }
   componentDidMount() {
     this.fetchData();
   }
@@ -56,6 +42,7 @@ export default class Lists extends Component {
             {this.state.listData.map((data, index) => (
               <MediaCard
                 delete={this.deleteData}
+                details = {this.handleDetails}
                 id={data.id}
                 key={index}
                 name={data.name}

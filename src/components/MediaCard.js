@@ -13,7 +13,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Button } from "@material-ui/core";
-import clsx from "clsx"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -74,23 +73,24 @@ export default function MediaCard(props) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="delete button">
-          <DeleteIcon />
+          <DeleteIcon onClick={props.delete()}/>
         </IconButton>
         <IconButton aria-label="update button">
           <EditIcon />
         </IconButton>
-        
         <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded
-          })}
+          // className={clsx(classes.expand, {
+          //   [classes.expandOpen]: expanded
+          // })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
           <ExpandMoreIcon />
         </IconButton>
-        <Button variant="contained" className={classes.btn} >DETAILS</Button>
+        <Button onClick={()=>{
+          props.details()
+        }} variant="contained" className={classes.btn}>DETAILS</Button>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

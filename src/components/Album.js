@@ -96,7 +96,6 @@ export default function Album() {
           </Button>
           <Button
             component={Link}
-            to="/"
             size="large"
             color="inherit"
           >
