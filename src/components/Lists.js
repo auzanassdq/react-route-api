@@ -17,7 +17,6 @@ export default class Lists extends Component {
     this.setState({
       listData: res.data
     });
-    console.log(this.state.listData);
   };
 
   deleteData = id => {
@@ -43,6 +42,7 @@ export default class Lists extends Component {
       .then(response => response.json())
       .then(json => console.log(json));
   };
+
 
   componentDidMount() {
     this.fetchData();

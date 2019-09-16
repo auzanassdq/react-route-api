@@ -19,11 +19,16 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   heading : {
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    fontWeight: "700",
+    color:"lightGray"
   },
   title: {
     flexGrow: 1,
     textDecoration: "none"
+  },
+  appbar:{
+    backgroundColor: "lightBlue"
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -66,7 +71,7 @@ export default function Album() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar className={classes.appbar} position="relative">
         <Toolbar>
           <CameraIcon className={classes.icon} />
 
@@ -104,7 +109,6 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography
-              component="h1"
               variant="h2"
               align="center"
               color="textPrimary"

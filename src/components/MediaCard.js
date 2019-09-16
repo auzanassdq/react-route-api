@@ -8,10 +8,12 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { yellow } from "@material-ui/core/colors";
+import { yellow, red } from "@material-ui/core/colors";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Button } from "@material-ui/core";
+import clsx from "clsx"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -32,6 +34,10 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     backgroundColor: yellow[500]
+  },
+  btn: {
+    backgroundColor: red[300],
+    color: "white"
   }
 }));
 
@@ -44,7 +50,7 @@ export default function MediaCard(props) {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card onClick className={classes.card}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -73,16 +79,18 @@ export default function MediaCard(props) {
         <IconButton aria-label="update button">
           <EditIcon />
         </IconButton>
+        
         <IconButton
-          // className={clsx(classes.expand, {
-          //   [classes.expandOpen]: expanded
-          // })}
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded
+          })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
           <ExpandMoreIcon />
         </IconButton>
+        <Button variant="contained" className={classes.btn} >DETAILS</Button>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
