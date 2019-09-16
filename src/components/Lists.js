@@ -4,7 +4,7 @@ import MediaCard from "./MediaCard";
 import { Grid } from "@material-ui/core";
 
 
-export default class List extends Component {
+export default class Lists extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,15 +13,15 @@ export default class List extends Component {
   }
 
   fetchData = async () => {
-    let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    let res = await axios.get("https://jsonplaceholder.typicode.com/users");
     this.setState({
       listData: res.data
     });
     console.log(this.state.listData);
   };
 
-  deleteData = async id => {
-    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  deleteData = id => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: "DELETE"
     })
       .then(response => response.json())
@@ -29,29 +29,12 @@ export default class List extends Component {
   };
 
   postData = async () => {
-    await fetch("https://jsonplaceholder.typicode.com/todos", {
+    await fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify({
         userId: 1,
         title: "title goes here",
         body: "Body message"
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-      .then(response => response.json())
-      .then(json => console.log(json));
-  };
-
-  putData = async () => {
-    fetch(`https://jsonplaceholder.typicode.com/todos/1`, {
-      method: "PUT",
-      body: JSON.stringify({
-        userId: 1,
-        id: 5,
-        title: "hello task",
-        completed: "hello body"
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8"
@@ -75,8 +58,12 @@ export default class List extends Component {
                 delete={this.deleteData}
                 id={data.id}
                 key={index}
-                dataBody={data.body}
-                dataTitle={data.title}
+                name={data.name}
+                email={data.email}
+                phone={data.phone}
+                website={data.website}
+                address={data.address}
+                company={data.company}
               />
             ))}
           </Grid>

@@ -1,4 +1,7 @@
 import React from "react";
+import {Link } from "react-router-dom";
+
+import Footer from "./Footer";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
@@ -7,31 +10,16 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-// import Link from "@material-ui/core/Link";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // import Link from '@material-ui/core/Link';
-import List from "./Index";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Lists from "./Lists";
 
 const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -58,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6)
-  },
+  }
 }));
 
 function signOut() {
@@ -88,7 +76,6 @@ export default function Album() {
           >
             Home
           </Typography>
-
           <Button
             component={Link}
             to="/"
@@ -97,6 +84,14 @@ export default function Album() {
             onClick={signOut}
           >
             Sign Out
+          </Button>
+          <Button
+            component={Link}
+            to="/"
+            size="large"
+            color="inherit"
+          >
+            Add data
           </Button>
         </Toolbar>
       </AppBar>
@@ -115,24 +110,9 @@ export default function Album() {
             </Typography>
           </Container>
         </div>
-        <List />
+        <Lists />
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
+      <Footer/>
     </React.Fragment>
   );
 }
