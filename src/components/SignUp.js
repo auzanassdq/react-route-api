@@ -66,11 +66,11 @@ export default function SignUp(props) {
   }
 
   function handleSubmit(event) {
-    localStorage.setItem("data", JSON.stringify(submitValue));
     event.preventDefault();
     if (submitValue.email === "" || submitValue.password === "") {
       alert("Dont Forget To Fill Your name Or Passwords");
     } else {
+      localStorage.setItem("data", JSON.stringify(submitValue));
       props.history.push("/sign-in");
     }
     console.log(submitValue);
