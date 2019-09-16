@@ -8,8 +8,14 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 import List from "./Index";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import Album from "./Album";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch } from '@material-ui/core';
+
 
 function Copyright() {
   return (
@@ -56,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Album() {
+export default function Home() {
   const classes = useStyles();
 
   return (
@@ -64,9 +70,8 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            JANCOK
           </Typography>
         </Toolbar>
       </AppBar>
@@ -75,11 +80,44 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Selamat Datang di Album
+              Album Jancok
             </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Something short and leading about the collection below—its contents, the creator, etc.
+              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
+              entirely.
+            </Typography>
+            <div className={classes.heroButtons}>
+
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Link to="/sign-in">
+                    <Button variant="outlined" color="primary">
+                      Sign In
+                    </Button>
+                  </Link>
+                  
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                  <Link to="/sign-up">Sign Up</Link>
+                  </Button>
+                </Grid>
+              </Grid>
+
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                <Link to="/sign-in">
+                  <Button variant="contained" color="primary">
+                    View Our Album
+                  </Button>
+                  </Link>
+                </Grid>
+              </Grid>
+
+            </div>
           </Container>
         </div>
-        <List/>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
@@ -92,6 +130,7 @@ export default function Album() {
         <Copyright />
       </footer>
       {/* End footer */}
+
     </React.Fragment>
   );
 }

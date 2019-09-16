@@ -13,8 +13,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -58,7 +56,8 @@ export default function SignIn(props) {
 
   const [submitValue, setSubmitValue] = useState({
     email: "",
-    password: ""
+    password: "",
+    isSignIn: false
   });
 
   function handleChange(event) {
@@ -66,22 +65,26 @@ export default function SignIn(props) {
   }
 
   function handleSubmit(event) {
-    // localStorage.setItem("data",JSON.stringify(submitValue))
-    const userLocal = JSON.parse(localStorage.getItem("data"))
+    const userLocal = JSON.parse(localStorage.getItem("data"));
 
     event.preventDefault();
-    if(submitValue.email === '' || submitValue.password === '') {
-      alert('Dont Forget To Fill Your name Or Passwords')
-    }else if (submitValue.email === userLocal.email && submitValue.password === userLocal.password){
-      props.history.push('/album')
-    }else{
-      alert('inputan salah')
+    if (submitValue.email === "" || submitValue.password === "") {
+      alert("Dont Forget To Fill Your name Or Passwords");
+    } else if (
+      submitValue.email === userLocal.email &&
+      submitValue.password === userLocal.password
+    ) {
+      setSubmitValue({ ...submitValue, isSignIn: true });
+      props.history.push("/album");
+      localStorage.setItem("userSignIn", JSON.stringify(submitValue));
+    } else {
+      alert("inputan salah");
     }
     console.log(submitValue);
   }
 
   return (
-    <Container component="main" maxWidth="xs" >
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -103,7 +106,6 @@ export default function SignIn(props) {
             autoFocus
             defaultValue={submitValue.email}
             onChange={handleChange}
-            
           />
           <TextField
             variant="outlined"
@@ -128,7 +130,6 @@ export default function SignIn(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            
           >
             Sign In
           </Button>
