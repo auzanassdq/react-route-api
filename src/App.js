@@ -3,9 +3,6 @@ import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Redirect,
-  withRouter
 } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
